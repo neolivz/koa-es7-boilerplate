@@ -11,7 +11,9 @@
     "test": "mocha test/**/*.js --compilers js:babel-register --require test/_helpers",
     "test-watch": "npm run test -- --watch",
     "lint": "eslint src/ test/",
-    "lint-watch": "esw -w src/ test/"
+    "lint-watch": "esw -w src/ test/",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Jeff Hansen",
   "contributors": [
@@ -36,7 +38,8 @@
     "koa-respond": "^0.3.0",
     "koa-router": "^7.0.1",
     "source-map-support": "^0.4.1",
-    "yenv": "^1.0.0"
+    "yenv": "^1.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -50,5 +53,6 @@
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "supertest": "^1.2.0"
-  }
+  },
+  "snyk": true
 }
